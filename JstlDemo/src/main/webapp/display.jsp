@@ -8,10 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	
-	${label}
-	
-	<c:out value="Hello World" />
+	<c:out value="${label}" />
 </body>
 </html>
