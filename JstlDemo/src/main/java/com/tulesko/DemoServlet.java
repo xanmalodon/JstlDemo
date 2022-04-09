@@ -18,7 +18,9 @@ public class DemoServlet extends HttpServlet{
 //		super.doGet(req, resp);
 		String name = "Louis";
 		
-		req.setAttribute("label", name);
+		Student s = new Student(1, "Navin") ;
+		
+		req.setAttribute("student", s);
 		RequestDispatcher rd = req.getRequestDispatcher("display.jsp");
 		rd.forward(req, resp);
 	}

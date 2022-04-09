@@ -8,6 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:out value="${label}" />
+<!-- affiche le hashcode -->
+<%-- 	<c:out value="${student}" /> --%>
+	<c:out value="${student.name}"/>
+<!-- 	si on ne met pas les getters et setters dans le bean ca ne fonctionne pas -->
+	
+<%-- 	<c:catch></c:catch> --%>
+<%-- 	<c:import url="http://www.telusko.com/online.htm "></c:import> --%>
+<%-- 	<c:set ></c:set> --%>
 </body>
 </html>
