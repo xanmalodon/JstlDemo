@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +10,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- affiche le hashcode -->
-<%-- 	<c:out value="${student}" /> --%>
-	<c:out value="${student.name}"/>
-<!-- 	si on ne met pas les getters et setters dans le bean ca ne fonctionne pas -->
+
+	<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/ecole?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC" user="root" password="root"/>
+
+	<sql:query var="rs" dataSource="${db}">select * from etudiant</sql:query>
 	
-<%-- 	<c:catch></c:catch> --%>
-<%-- 	<c:import url="http://www.telusko.com/online.htm "></c:import> --%>
-<%-- 	<c:set ></c:set> --%>
-
-	<br/>
-
-	<c:forEach items="${studs}" var="s">
-		${s.name} <br/>
+	<c:forEach items="${rs.rows}" var="row">
+		<c:out value="${row.PrenomEtudiant}"></c:out> : <c:out value="${row.NomEtudiant}"></c:out>  
 	</c:forEach>
 </body>
 </html>

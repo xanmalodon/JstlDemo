@@ -18,13 +18,8 @@ public class DemoServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// JSTL -> JSP Standart Tag Library
 //		super.doGet(req, resp);
-		String name = "Louis";
 		
-		List<Student> studs = Arrays.asList(new Student(1,"Louis"), new Student(2, "Jean"), new Student(3, "Pierre"));
-		Student s = new Student(1, "Navin") ;
-		
-		req.setAttribute("student", s);		
-		req.setAttribute("studs", studs);
+
 		RequestDispatcher rd = req.getRequestDispatcher("display.jsp");
 		rd.forward(req, resp);
 	}
