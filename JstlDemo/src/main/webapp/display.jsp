@@ -7,13 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hello World ! 
-	
-	<% 
-	String name = request.getAttribute("label").toString();
-	out.println(name);
-	%>
+
 	
 	${label}
+	
 </body>
 </html>
