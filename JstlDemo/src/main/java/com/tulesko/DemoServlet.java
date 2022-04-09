@@ -1,6 +1,8 @@
 package com.tulesko;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,9 +20,11 @@ public class DemoServlet extends HttpServlet{
 //		super.doGet(req, resp);
 		String name = "Louis";
 		
+		List<Student> studs = Arrays.asList(new Student(1,"Louis"), new Student(2, "Jean"), new Student(3, "Pierre"));
 		Student s = new Student(1, "Navin") ;
 		
-		req.setAttribute("student", s);
+		req.setAttribute("student", s);		
+		req.setAttribute("studs", studs);
 		RequestDispatcher rd = req.getRequestDispatcher("display.jsp");
 		rd.forward(req, resp);
 	}

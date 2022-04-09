@@ -16,5 +16,11 @@
 <%-- 	<c:catch></c:catch> --%>
 <%-- 	<c:import url="http://www.telusko.com/online.htm "></c:import> --%>
 <%-- 	<c:set ></c:set> --%>
+
+	<br/>
+
+	<c:forEach items="${studs}" var="s">
+		${s.name} <br/>
+	</c:forEach>
 </body>
 </html>
